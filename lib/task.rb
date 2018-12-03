@@ -28,7 +28,7 @@ class Task
    end
 
  def order_by
-   order = DB.exec("SELECT description FROM tasks ORDER BY duedate;")
+   order = DB.exec("SELECT * FROM tasks ORDER BY duedate;")
  end
- 
+
 end

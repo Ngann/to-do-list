@@ -17,6 +17,7 @@ class List
     end
     lists
   end
+  
   def tasks
     list_tasks = []
     tasks = DB.exec("SELECT * FROM tasks WHERE list_id = #{self.id()};")

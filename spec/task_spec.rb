@@ -45,7 +45,7 @@ describe(Task) do
   end
 
   describe("#order_by") do
-    it("returns an array of taskk order by duedate") do
+    it("orders tasks by duedate") do
       test_task = Task.new({:description => "Learn SQL", :list_id => 1, :duedate => "5"})
       test_task.save()
       test_task2 = Task.new({:description => "Review Ruby", :list_id => 1, :duedate => "6"})
