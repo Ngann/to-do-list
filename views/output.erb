@@ -1,0 +1,9 @@
+<%@list_words.each do |list|%>
+  <h4><a href="/lists/<%= list.id%>"><%= list.name%></a></h4>
+<% end %>
+
+<div class="container">
+  <a href="/">Home</a>
+  <a href="/lists/new">Add New List</a>
+  <a href="/task_form">Add New Task</a>
+</div>

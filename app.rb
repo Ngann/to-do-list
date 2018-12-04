@@ -8,10 +8,12 @@ require("pg")
 DB = PG.connect({:dbname => "to_do"})
 
 get("/") do
-  erb(:index)
+  @list_names = List.all()
+  erb(:input)
 end
 
 get("/lists/new") do
+  @list_names = List.all()
   erb(:list_form)
 end
 
@@ -23,11 +25,10 @@ post("/lists") do
   erb(:success)
  end
 
-
-post('/lists') do
-  erb(:list)
-end
-
+ get("/full_list") do
+   @list_words = List.all()
+   erb(:output)
+ end
 
  get('/list-list') do
    @lists = List.all()

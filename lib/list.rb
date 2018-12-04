@@ -49,4 +49,8 @@ class List
     found_list
   end
 
+  def self.clear()
+    @list_names = []
+  end
+
 end

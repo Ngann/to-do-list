@@ -1,19 +1,19 @@
 
-<form action="/list-list" method="post">
-
-</form>
-
-
 <form action="/lists" method="post">
-  <label for="name">List Name:</label>
-  <input id="name" name="name" type="text">
-
-  <button type="submit">Add List</button>
+  <div class="form-group">
+    <label for="name">List</label>
+    <input id="name" name="name" class="form-control" type="text">
+  </div>
+  </div>
+  <button type="submit" class="btn-info">Add List</button>
 </form>
 
-
-<hr>
+<%@list_names.each do |list|%>
+  <h4><a href="/lists/<%= list.id%>"><%= list.name%></a></h4>
+<% end %>
 
 <div class="container">
   <a href="/">Home</a>
+  <a href="/output">View All Lists</a>
+  <a href="/task_form">Add New Task</a>
 </div>

@@ -3,6 +3,9 @@ Your changes have been saved.
 
 <p><%= @name %></p>
 
+<%@list_names.each do |list|%>
+  <h4><a href="/lists/<%= list.id%>"><%= list.name%></a></h4>
+<% end %>
 
 <div class="container">
   <a href="/"><button class="button btn">Return Home</a>
