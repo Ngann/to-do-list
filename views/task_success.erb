@@ -1,7 +1,24 @@
-<h1><%= @task.list_id%></h1>
-<h1><%= @task.description%></h1>
+<h1>Task List ID:<%= @task.list_id%></h1>
+<h1>Task Description:<%= @task.description%></h1>
+<h1>Task DueDate:<%= @task.duedate%></h1>
 <h1>test</h1>
 
+
+<h1><%= @list.name() %></h1>
+
+<% if @list.tasks().any?() %>
+  <h3>Here are all the tasks in this list:</h3>
+
+  <ul>
+    <% @list.tasks().each() do |task| %>
+      <li><%= task.description() %> </li>
+    <% end %>
+  </ul>
+
+  <% else %>
+    <p>There are no tasks on this list!</p>
+  <% end %>
+  
 <div class="container">
   <a href="/">Home</a>
   <a href="/full_list">View All Lists</a>
