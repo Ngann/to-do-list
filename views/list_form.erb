@@ -1,19 +1,17 @@
 
 <form action="/lists" method="post">
   <div class="form-group">
-    <label for="name">List</label>
+    <label for="name">Create List</label>
     <input id="name" name="name" class="form-control" type="text">
-  </div>
   </div>
   <button type="submit" class="btn-info">Add List</button>
 </form>
 
-<%@list_names.each do |list|%>
+<!-- <%@list_names.each do |list|%>
   <h4><a href="/lists/<%= list.id%>"><%= list.name%></a></h4>
-<% end %>
+<% end %> -->
 
 <div class="container">
   <a href="/">Home</a>
   <a href="/full_list">View All Lists</a>
-  <a href="/task_form">Add New Task</a>
 </div>

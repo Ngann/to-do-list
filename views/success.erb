@@ -1,12 +1,13 @@
 <h1>Success!</h1>
 Your changes have been saved.
-
 <p><%= @name %></p>
 
-<%@list_names.each do |list|%>
-  <h4><a href="/lists/<%= list.id%>"><%= list.name%></a></h4>
-<% end %>
+<!-- # <%@list_names.each do |list|%>
+#   <h4><a href="/lists/<%= list.id%>"><%= list.name%></a></h4>
+# <% end %> -->
 
 <div class="container">
-  <a href="/"><button class="button btn">Return Home</a>
+  <a href="/">Home</a>
+  <a href="/full_list">View All Lists</a>
+  <a href="/lists/new">Add New List</a>
 </div>

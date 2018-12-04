@@ -1,4 +1,5 @@
-<h3>Add a task to <%= @list.name() %> id: <%= @list.id() %></h3>
+<h3>Add a task to list name: <%= @list.name() %></h3>
+<h3>List id: <%= @list.id() %></h3>
 
 <form action="/tasks" method="post">
   <input id="list_id" name="list_id" type="hidden" value="<%= @list.id() %>">

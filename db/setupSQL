@@ -1,0 +1,9 @@
+psql
+CREATE DATABASE to_do
+\c to_do
+CREATE TABLE tasks (id serial PRIMARY KEY, description varchar);
+CREATE TABLE lists (id serial PRIMARY KEY, name varchar);
+ALTER TABLE tasks ADD list_id int;
+ALTER TABLE tasks ADD duedate int;
+CREATE DATABASE to_do_test WITH TEMPLATE to_do;
+\d tasks

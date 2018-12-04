@@ -1,11 +1,9 @@
-<h1>Task List ID:<%= @task.list_id%></h1>
-<h1>Task Description:<%= @task.description%></h1>
-<h1>Task DueDate:<%= @task.duedate%></h1>
-<h1>test</h1>
+<h3>List ID:<%= @list.id%></h3>
+<h3>List Name:<%= @list.name() %></h3>
 
-
-<h1><%= @list.name() %></h1>
-
+<h3>Task List ID:<%= @task.list_id%></h3>
+<!-- <h3>Current Task Description:<%= @task.description%></h3>
+<h3>Current Task DueDate:<%= @task.duedate%></h3> -->
 <% if @list.tasks().any?() %>
   <h3>Here are all the tasks in this list:</h3>
 
@@ -18,7 +16,18 @@
   <% else %>
     <p>There are no tasks on this list!</p>
   <% end %>
-  
+
+  <form action="/tasks" method="post">
+    <input id="list_id" name="list_id" type="hidden" value="<%= @list.id() %>">
+
+    <label for="description">Description of the task:</label>
+    <input id="description" name="description" type="text">
+    <label for="duedate">Duedate:</label>
+    <input id="duedate" name="duedate" type="text">
+
+    <button type="submit">Add task</button>
+  </form>
+
 <div class="container">
   <a href="/">Home</a>
   <a href="/full_list">View All Lists</a>
