@@ -29,22 +29,24 @@ post("/lists") do
    @list_names = List.all()
    erb(:output)
  end
-#
-#  get('/list-list') do
-#    @lists = List.all()
-#    erb(:list)
-#  end
-#
+
  get("/lists/:id") do
-  @list = List.find(params.fetch("id").to_i())
-  erb(:list)
+  list_id = params.fetch("id").to_i()
+  @list = List.find(list_id)
+  erb(:list_detail)
 end
-#
-# post("/tasks") do
-#   description = params.fetch("description")
-#   list_id = params.fetch("list_id").to_i()
-#   @list = List.find(list_id)
-#   @task = Task.new({:description => description, :list_id => list_id})
-#   @task.save()
-#   erb(:task_success)
-# end
+
+get("/task_form") do
+ erb(:task_form)
+end
+
+post("/tasks") do
+  @list_names = List.all()
+  description = params.fetch("description")
+  duedate = params.fetch("duedate").to_i()
+  list_id = params.fetch("list_id").to_i()
+  # @list = List.find(list_id)
+  @task = Task.new({:description => description, :list_id => list_id, :duedate => duedate,})
+  @task.save()
+  erb(:task_success)
+end
